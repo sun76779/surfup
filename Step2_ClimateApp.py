@@ -111,7 +111,7 @@ def calc_temps(start='start_date'):
     start_results = session.query(func.max(Measurement.tobs), \
                             func.min(Measurement.tobs),\
                             func.avg(Measurement.tobs)).\
-                            filter(Measurement.date >= start_date) 
+                            filter(Measurement.date >= prev_year) 
     
     start_tobs = []
     for tobs in start_results:
